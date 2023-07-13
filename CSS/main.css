@@ -1,0 +1,52 @@
+body {
+    background: rgb(58, 51, 51);
+}
+
+.movies {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(150px, 1fr));
+    gap: 8px;
+}
+
+
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.32s ease-in-out;
+    &:hover {
+        transform: translateY(-5px);
+        
+    }
+}
+
+#video-container {
+    display: none; /* Oculta inicialmente la div */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 560px; /* Ancho del video */
+    height: 315px; /* Alto del video */
+    /*opacity: 0.3;  Opacidad inicial de la div */
+    transition: opacity 0.5s; /* Transición suave de la opacidad */
+    z-index: 9999;
+  }
+
+  #video-container:hover {
+    /*opacity: 1;  Opacidad al pasar el mouse por encima de la div */
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo semitransparente */
+    z-index: 9998;
+  }
